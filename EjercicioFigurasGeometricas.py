@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import math
 
-# Clases para las figuras geométricas
 class Circulo:
     def __init__(self, radio):
         self.radio = radio
@@ -57,7 +56,6 @@ class TrianguloRectangulo:
         else:
             return "Escaleno"
 
-# Interfaz gráfica
 class Aplicacion(tk.Tk):
     def __init__(self):
         super().__init__()
