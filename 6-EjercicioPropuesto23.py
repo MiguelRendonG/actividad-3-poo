@@ -31,7 +31,6 @@ class App:
         self.root = root
         self.root.title("Ecuación de Segundo Grado")
 
-        # Etiquetas y entradas
         tk.Label(root, text="Valor de A:").grid(row=0, column=0, padx=5, pady=5)
         self.a_entry = tk.Entry(root)
         self.a_entry.grid(row=0, column=1, padx=5, pady=5)
@@ -44,28 +43,24 @@ class App:
         self.c_entry = tk.Entry(root)
         self.c_entry.grid(row=2, column=1, padx=5, pady=5)
 
-        # Botón para calcular
+
         calcular_button = tk.Button(root, text="Calcular Raíces", command=self.calcular)
         calcular_button.grid(row=3, column=0, columnspan=2, pady=10)
 
     def calcular(self):
         try:
-            # Captura de datos
             a = float(self.a_entry.get())
             b = float(self.b_entry.get())
             c = float(self.c_entry.get())
-
-            # Crear objeto y calcular raíces
+            
             ecuacion = EcuacionSegundoGrado(a, b, c)
             resultado = ecuacion.calcular_raices()
 
-            # Mostrar resultados
             messagebox.showinfo("Resultado", resultado)
         except ValueError:
             messagebox.showerror("Error", "Por favor, ingrese valores numéricos válidos.")
 
 
-# Configuración de la aplicación
 if __name__ == "__main__":
     root = tk.Tk()
     app = App(root)
