@@ -170,7 +170,7 @@ class Aplicacion(tk.Tk):
         except ValueError:
             messagebox.showerror("Error", "Por favor ingrese valores numéricos válidos.")
 
-# Ejecutar la aplicación
+
 if __name__ == "__main__":
     app = Aplicacion()
     app.mainloop()
