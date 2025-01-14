@@ -23,7 +23,7 @@ class App:
         self.root = root
         self.root.title("Cálculo de Salario")
 
-        # Etiquetas y entradas
+   
         tk.Label(root, text="Código del empleado:").grid(row=0, column=0, padx=10, pady=5)
         self.codigo_entry = tk.Entry(root)
         self.codigo_entry.grid(row=0, column=1, padx=10, pady=5)
@@ -44,25 +44,25 @@ class App:
         self.retencion_entry = tk.Entry(root)
         self.retencion_entry.grid(row=4, column=1, padx=10, pady=5)
 
-        # Botón para calcular
+    
         self.calcular_button = tk.Button(root, text="Calcular", command=self.calcular)
         self.calcular_button.grid(row=5, column=0, columnspan=2, pady=10)
 
     def calcular(self):
         try:
-            # Captura de datos
+      
             codigo = self.codigo_entry.get()
             nombres = self.nombres_entry.get()
             horas_trabajadas = float(self.horas_entry.get())
             valor_hora = float(self.valor_hora_entry.get())
             retencion = float(self.retencion_entry.get())
 
-            # Crear objeto Empleado y calcular salarios
+         
             empleado = Empleado(codigo, nombres, horas_trabajadas, valor_hora, retencion)
             salario_bruto = empleado.calcular_salario_bruto()
             salario_neto = empleado.calcular_salario_neto()
 
-            # Mostrar resultados
+         
             messagebox.showinfo("Resultados", f"Código: {codigo}\n"
                                             f"Nombres: {nombres}\n"
                                             f"Salario Bruto: ${salario_bruto:.2f}\n"
